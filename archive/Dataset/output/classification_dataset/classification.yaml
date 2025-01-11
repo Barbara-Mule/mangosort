@@ -1,0 +1,6 @@
+
+train: C:/Users/PC/Desktop/project/archive/Dataset/output/classification_dataset/images/train
+val: C:/Users/PC/Desktop/project/archive/Dataset/output/classification_dataset/images/val
+
+nc: 9  # Number of classes
+names: ['Apple Mango', 'Boribo', 'Dodo', 'Gesine', 'Kent', 'Kitovu', 'Ngowe', 'Sabine', 'Tommy Atkins']  # Class names

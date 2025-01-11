@@ -1,0 +1,6 @@
+
+train: C:/Users/PC/Desktop/project/archive/Dataset/output/grading_dataset/images/train
+val: C:/Users/PC/Desktop/project/archive/Dataset/output/grading_dataset/images/val
+
+nc: 3  # Number of classes
+names: ['ExtraGrade', 'FirstGrade', 'SecondGrade']  # Class names

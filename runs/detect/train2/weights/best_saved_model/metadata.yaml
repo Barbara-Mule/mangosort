@@ -1,0 +1,22 @@
+description: Ultralytics best model trained on C:/Users/PC/Desktop/project/archive/Dataset/output/classification_dataset/classification.yaml
+author: Ultralytics
+date: '2025-01-11T19:30:22.522503'
+version: 8.3.24
+license: AGPL-3.0 License (https://ultralytics.com/license)
+docs: https://docs.ultralytics.com
+stride: 32
+task: detect
+batch: 1
+imgsz:
+- 640
+- 640
+names:
+  0: Apple Mango
+  1: Boribo
+  2: Dodo
+  3: Gesine
+  4: Kent
+  5: Kitovu
+  6: Ngowe
+  7: Sabine
+  8: Tommy Atkins
