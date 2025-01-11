@@ -1,4 +1,3 @@
-#IS Project II
 # MangoSort - A Mango Classification and Grading System
 
 This is a YOLOv8-powered mango classification and grading system to assist farmers in Kenya to identifying Kenyan mango varieties and grading them based on quality standards. The system leverages deep learning models for image classification and object detection, integrated into a streamlined pipeline for training, evaluation, and deployment.
