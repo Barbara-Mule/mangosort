@@ -1,111 +1,94 @@
-#IS Project II
-# MangoSort - A Mango Classification and Grading System
+# MangoSort - A YOLOv8-Powered Mango Classification and Grading Mobile Application
 
-This is a YOLOv8-powered mango classification and grading system to assist farmers in Kenya to identifying Kenyan mango varieties and grading them based on quality standards. The system leverages deep learning models for image classification and object detection, integrated into a streamlined pipeline for training, evaluation, and deployment.
+## Project Overview
+This is a YOLOv8-powered mango classification and grading system developed to assist farmers in Kenya to identifying Kenyan mango varieties and grading them based on quality standards. The system leverages deep learning models for image classification and object detection, integrated into a streamlined pipeline for training, evaluation, and deployment.
 
 ## Project Features
-- **Classification**: Identifies 9 distinct Kenyan mango varieties based on visual features.
-- **Grading**: Categorizes mangoes into three quality grades (Extra Grade, First Grade, Second Grade).
-- **Training and Evaluation**: Uses labeled datasets for training YOLOv8 models with performance metrics such as accuracy, precision, recall, and F1 score.
-- **Deployment**: Converts trained models to TensorFlow Lite format for efficient deployment.
+1. **Classification**: Identifies 9 distinct Kenyan mango varieties based on visual features.
+2. **Grading**: Categorizes mangoes into three quality grades (Extra Grade, First Grade, Second Grade).
+3. **Training and Evaluation**: Uses labeled datasets for training YOLOv8 models with performance metrics such as accuracy, precision, recall, and F1 score.
+4. **Deployment**: Converts trained models to TensorFlow Lite format for efficient deployment.
+5. **User-Friendly Mobile Interface**: Allows farmers to capture images of mangoes for automated analysis.
+6. **Real-Time Feedback**: Provides immediate classification and grading results.
 
 ## Dataset Description
-### Classification Dataset
-- **Classes**: 9 Kenyan mango varieties
-- **Total Images**: 1,800 (200 images per variety)
-- **Split**:
-  - 70% Training
-  - 15% Validation
-  - 15% Testing
+### **Classification Dataset**
+- **Classes**: 9 mango varieties (e.g., Apple Mango, Boribo, Kent, Ngowe).
+- **Total Images**: 1,800 (200 images per class).
+- **Label Format**: Each image is labeled with a class index (0-8) and dummy bounding box coordinates for YOLO compatibility.
 
-### Grading Dataset
-- **Classes**: Extra Grade, First Grade, Second Grade
-- **Total Images**: 658
-  - Extra Grade: 202 images
-  - First Grade: 229 images
-  - Second Grade: 227 images
-- **Split**:
-  - 70% Training
-  - 15% Validation
-  - 15% Testing
+### **Grading Dataset**
+- **Classes**: Extra Grade, First Grade, Second Grade.
+- **Total Images**: 658 (202, 229, and 227 images, respectively).
+- **Label Format**: Each image is labeled with a grade index (0-2) and dummy bounding box coordinates.
 
-## Project Structure
-```
-project/
-├── classification_dataset/        # Raw classification dataset
-├── grading_dataset/               # Raw grading dataset
-├── output/                        # Processed datasets and results
-│   ├── Classification_Dataset/
-│   ├── Grading_Dataset/
-├── scripts/                       # Python scripts for training and evaluation
-├── models/                        # Trained YOLOv8 models
-├── README.md                      # Project documentation
-```
+## Development Tools
+- **Programming Language**: Python and Android
+- **Frameworks**: Ultralytics YOLOv8, TensorFlow Lite
+- **Integrated Development Environment (IDE)**: VS Code
+- **Database Management**: Firebase
+- **Version Control**: Git and GitHub
+- **Prototyping Tools**: Figma
 
-## Setup and Installation
-1. **Clone the Repository**:
+## System Requirements
+### **Hardware Specifications**
+- Processor: Intel Core i7 or equivalent
+- RAM: 16 GB
+- Storage: 50 GB free space
+- GPU: NVIDIA GTX 1080 or higher (optional for training)
+
+### **Software Specifications**
+- Operating System: Windows 10 / Ubuntu 20.04
+- Python Version: 3.8 or above
+- Required Libraries: `ultralytics`, `tensorflow`, `numpy`, `sklearn`, `matplotlib`
+
+## Model Training and Testing
+- **Training Split**: 70% of the dataset is used for training.
+- **Validation Split**: 15% of the dataset is used for validation.
+- **Testing Split**: 15% of the dataset is reserved for testing.
+- **Evaluation Metrics**: Accuracy, Precision, Recall, Mean Average Precision(mAP), F1 Score, and Confusion Matrix.
+
+## Installation and Setup
+1. Clone the repository:
    ```bash
    git clone <repository-url>
-   cd project
    ```
-
-2. **Install Dependencies**:
+2. Install required dependencies:
    ```bash
-   pip install ultralytics tensorflow numpy sklearn
+   pip install -r requirements.txt
    ```
-
-3. **Prepare the Dataset**:
-   - Extract the datasets to their respective directories.
-   - Ensure proper folder structure for classification and grading datasets.
-
-4. **Run Dataset Preparation**:
+3. Extract the datasets:
+   - Place the datasets in the `Dataset/Classification_dataset` and `Dataset/Grading_dataset` directories.
+4. Run the training script:
    ```bash
-   python scripts/prepare_datasets.py
+   python yolov8_training.ipynb
    ```
 
-5. **Train the Models**:
-   - Classification Model:
-     ```bash
-     python scripts/train_classification.py
-     ```
-   - Grading Model:
-     ```bash
-     python scripts/train_grading.py
-     ```
+## Usage
+1. Launch the mobile application.
+2. Capture images of mangoes using the device's camera.
+3. View real-time classification and grading results on the application.
 
-6. **Evaluate the Models**:
-   ```bash
-   python scripts/evaluate_models.py
-   ```
+## System Architecture
+- **External Entities**: Farmer, System Admin.
+- **Core Components**: Mobile application, YOLOv8 models, and SQLite database.
+- **Data Flow**:
+  - Images are captured via the mobile app.
+  - YOLOv8 models classify and grade the mangoes.
+  - Results are stored in the database and displayed to the user.
 
-7. **Deploy the Models**:
-   ```bash
-   python scripts/export_to_tflite.py
-   ```
-
-## Key Components
-### YOLOv8 Models
-- **Framework**: Ultralytics YOLOv8
-- **Classification Task**: Predicts mango variety
-- **Grading Task**: Detects and grades mangoes based on quality
-
-### Tools and Technologies
-- **Programming Language**: Python
-- **Frameworks**: YOLOv8, TensorFlow
-- **Metrics**: Accuracy, Precision, Recall, F1 Score
-- **Deployment**: TensorFlow Lite
+## Future Enhancements
+1. Extend the dataset to include more mango varieties and quality grades.
+2. Optimize the YOLOv8 model for better performance on mobile devices.
+3. Implement multilingual support for the mobile application.
 
 ## Contributions
 Contributions to the project are welcome! Please fork the repository and submit a pull request with your changes.
 
-## License
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
-
 ## Contact
-For inquiries or feedback, contact:
-- **Email**: rachael.mule@strathmore.edu
-- **GitHub**: [Your GitHub Profile](https://github.com/yourprofile)
+For inquiries, contributions, or feedback, please reach out to:
+- **Name**: [Rachael Mule]
+- **Email**: [rachael.mule@strathmore.edu]
 
----
 
-Thank you for exploring the Mango Classification and Grading System!
+Thank you for exploring the MangoSort!
