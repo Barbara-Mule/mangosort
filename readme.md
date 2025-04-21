@@ -88,7 +88,7 @@ Contributions to the project are welcome! Please fork the repository and submit 
 ## Contact
 For inquiries, contributions, or feedback, please reach out to:
 - **Name**: [Rachael Mule]
-- **Email**: [rachael.mule@strathmore.edu]
+- **Email**: [musikwa.mule@gmail.com]
 
 
 Thank you for exploring the MangoSort!
